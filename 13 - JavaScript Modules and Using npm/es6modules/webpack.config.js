@@ -27,7 +27,7 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             compress: { warnings: false },
             output: { comments: false },
-            sourcemap: true,
+            sourceMap: true,
         }),
         // env plugin
         new webpack.DefinePlugin({
