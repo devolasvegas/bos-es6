@@ -5,15 +5,18 @@
   <title>Extending</title>
 </head>
 <body>
+  <a href="/">Go Home</a>
 <script>
   class MovieCollection extends Array {
     constructor(name, ...items) {
       super(...items);
       this.name = name;
     }
+
     add(movie) {
       this.push(movie);
     }
+
     topRated(limit = 10) {
       return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
     }
@@ -26,7 +29,7 @@
     { name: 'King of the Road', stars: 8 }
   );
 
-  movies.add({ name: 'Titanic', stars: 5 });
+  movies.add({ name: 'Titanic', stars: 10 });
 
 </script>
 </body>
