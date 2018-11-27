@@ -12,10 +12,12 @@
       this.thirst = 100;
       this.belly = [];
     }
+
     drink() {
       this.thirst -= 10;
       return this.thirst;
     }
+
     eat(food) {
       this.belly.push(food);
       return this.belly;
@@ -27,12 +29,13 @@
       super(name);
       this.breed = breed;
     }
+
     bark() {
-      console.log('Bark bark I\'m a dog');
+      console.log(`Bark bark! I'm a dog!`);
     }
   }
 
-  const rhino = new Animal('Rhiney');
+  const rhino = new Animal('Rhiny');
   const snickers = new Dog('Snickers', 'King Charles');
 
 </script>
