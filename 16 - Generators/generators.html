@@ -8,12 +8,9 @@
     <a href="/">Go Home</a>
 <script>
   function* listPeople() {
-    let i = 0;
-    yield i;
-    i++;
-    yield i;
-    i++;
-    yield i;
+    yield 'Wes';
+    yield 'Kait';
+    yield 'Snickers';
   }
 
   const people = listPeople();
@@ -29,14 +26,13 @@
   ];
 
   function* loop(arr) {
-    console.log(inventors);
-    for (const item of arr) {
+    console.log(arr);
+    for(const item of arr) {
       yield item;
     }
   }
 
   const inventorGen = loop(inventors);
-
 
 </script>
 </body>
