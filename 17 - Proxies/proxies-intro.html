@@ -5,21 +5,25 @@
   <title>Proxies!</title>
 </head>
 <body>
+    <a href="/">Go Home</a>
 <script>
-  const person = { name: 'Wes', age: 100 };
+  const person = { name: 'Dev', age: 100 };
+
   const personProxy = new Proxy(person, {
     get(target, name) {
-      // console.log('someone is asking for ', target, name);
-      return target[name].toUpperCase();
+      console.log('Someone is asking for ', target, name);
+      return target[name];
     },
     set(target, name, value) {
       if(typeof value === 'string') {
-        target[name] = value.trim().toUpperCase() + '✂️';
+        target[name] = value.trim();
       }
     }
-  });
+  })
 
-  personProxy.name = 'Wesley';
+  personProxy.name = 'Devon';
+
+
 </script>
 </body>
 </html>
