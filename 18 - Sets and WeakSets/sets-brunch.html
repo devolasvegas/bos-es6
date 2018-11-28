@@ -8,16 +8,19 @@
     <a href="/">Go Home</a>
 <script>
   const brunch = new Set();
-  // as people start coming in
-  brunch.add('wes');
-  brunch.add('Sarah');
-  brunch.add('Simone');
-  // ready to open!
+
+  // Add people
+  brunch.add('Devon');
+  brunch.add('Navy');
+  brunch.add('Maya');
+
   const line = brunch.values();
   console.log(line.next().value);
   console.log(line.next().value);
-  brunch.add('Heather');
-  brunch.add('Snickers');
+
+  brunch.add('Manny');
+  brunch.add('Cheemo');
+  console.log(line.next().value);
   console.log(line.next().value);
   console.log(line.next().value);
   console.log(line.next().value);
