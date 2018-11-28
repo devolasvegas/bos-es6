@@ -7,12 +7,34 @@
 
 <body>
   <script>
-    async function go() {
-      const p1 = fetch('https://api.github.com/users/wesbos');
-      const p2 = fetch('https://api.github.com/users/stolinski');
+    // async function go() {
+    //   const p1 = fetch('https://api.github.com/users/wesbos');
+    //   const p2 = fetch('https://api.github.com/users/stolinski');
+    //   const p3 = fetch('https://api.github.com/users/devolasvegas');
+
+    //   const res = await Promise.all([p1, p2, p3]);
+    //   const dataPromises = res.map(r => r.json());
+    //   const [wes, scott, devon] = await Promise.all(dataPromises);
+    //   console.log(wes, scott, devon);
+    // }
+
+    // go();
+
+    async function getData(names) {
+      try {
+        const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(r => r.json()));
+        const people = await Promise.all(promises);
+        const people = await Promise.race(promises);
+        console.log(people);
+      } catch (e) {
+        console.error('Daggum it.');
+        console.error(e);
+      }
+
     }
 
-    go();
+    getData(['wesbos', 'stolinski', 'devolasvegas']);
+
   </script>
 </body>
 
